@@ -19,7 +19,7 @@ function App() {
       document.body.style.color="white";
     }
   }
-
+ 
   return (
     <>
     <Navbar title="Title" mode={mode} toggleMode={toggleMode}/>
