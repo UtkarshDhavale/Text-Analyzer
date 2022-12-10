@@ -10,17 +10,28 @@ export default function TextForm(props) {
     }
 
     const convertUpperCase = ()=>{
+        if(text.length===0){
+            alert("Please Enter the Text!!");
+            return 0;
+        }
         setText(text.toUpperCase());
+        props.showAlert("Success","Converted to Uppercase");
         //console.log("On Click Handler Call");
     }
 
     const convertLowercase = ()=>{
+        if(text.length===0){
+            alert("Please Enter the Text!!");
+            return 0;
+        }
         setText(text.toLowerCase());
+        props.showAlert("Success","Converted to Lowercase");
         //console.log("On Click Handler Call");
     }
 
     const clearText = ()=>{
         setText("");
+        props.showAlert("Success","Text cleared");
         //console.log("On Click Handler Call");
     }
 
@@ -30,11 +41,16 @@ export default function TextForm(props) {
             return 0;
         }
         navigator.clipboard.writeText(text);
-        alert("Text Copied!!");
+        props.showAlert("Success","Copy to Clipboard");
     }
 
     const removeExtraSpaces = ()=>{
+        if(text.length===0){
+            alert("Please Enter the Text!!");
+            return 0;
+        }
         setText(text.split(/[ ]+/).join(" "));
+        props.showAlert("Success","Extra Space Removed");
     }
 
   return (
@@ -55,7 +71,7 @@ export default function TextForm(props) {
         <div className="container my-2">
             <u><h4>{props.heading1}</h4></u>
             <p>Your text is having {(text.trim().length===0)?0:text.trim().split(/\s+/).length} Words and {text.length} characters</p>
-            <p>{0.008*(text.trim().length===0)?0:text.trim().split(/\s+/).length} minutes read</p>
+            <p>{0.008*(text.trim().length)} minutes read</p>
             <u><h4>Preview</h4></u>
             <p>{text}</p>
         </div>
