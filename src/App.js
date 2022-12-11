@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React, {useState} from 'react'
 import Alert from './components/Alert';
+import About from './components/About';
 
 function App() {
 
@@ -42,6 +43,7 @@ function App() {
     <div className="container-fluid">
       <TextForm heading = "Text Analyzer" upperCase = "Convert to UpperCase" lowerCase = "Convert to LowerCase" heading1 = "Summary" clear = "Clear Text" mode={mode} showAlert = {showAlert}/>
     </div>
+    <About/>
     </>
   );
 }
