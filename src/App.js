@@ -3,13 +3,13 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React, {useState} from 'react'
 import Alert from './components/Alert';
-//import About from './components/About';
-/*import {
+import About from './components/About';
+import {
   BrowserRouter,
   Routes,
   Route
 } from "react-router-dom";
-*/
+
 
 function App() {
 
@@ -44,11 +44,10 @@ function App() {
  
   return (
     <>
-    {/*<BrowserRouter>*/}
+    <BrowserRouter>
     <Navbar title="Text Analyzer" mode={mode} toggleMode={toggleMode}/>
     <Alert alert = {alert}/>
-    {/*
-        <Routes>
+    <Routes>
         <Route exact path="/" element={
           <div className="container-fluid">
             <TextForm heading = "Enter the Text below:" upperCase = "Convert to UpperCase" lowerCase = "Convert to LowerCase" heading1 = "Summary" clear = "Clear Text" mode={mode} showAlert = {showAlert}/>
@@ -56,11 +55,7 @@ function App() {
         } />
         <Route exact path="about" element={<About/>}/>
       </Routes>
-      */}
-    {/*</BrowserRouter>*/}
-        <div className="container-fluid">
-          <TextForm heading = "Enter the Text below:" upperCase = "Convert to UpperCase" lowerCase = "Convert to LowerCase" heading1 = "Summary" clear = "Clear Text" mode={mode} showAlert = {showAlert}/>
-        </div>
+    </BrowserRouter>
     </>
   );
 }
