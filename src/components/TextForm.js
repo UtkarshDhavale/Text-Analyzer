@@ -73,7 +73,7 @@ export default function TextForm(props) {
             <p>Your text is having {(text.trim().length===0)?0:text.trim().split(/\s+/).length} Words and {text.length} characters</p>
             <p>{0.008*(text.trim().length)} minutes read</p>
             <u><h4>Preview</h4></u>
-            <p>{text}</p>
+            <p>{(text.length===0)?"Enter something in Textbox!!":text}</p>
         </div>
     </div>
     </>
