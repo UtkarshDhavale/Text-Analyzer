@@ -53,7 +53,7 @@ function App() {
             <TextForm heading = "Enter the Text below:" upperCase = "Convert to UpperCase" lowerCase = "Convert to LowerCase" heading1 = "Summary" clear = "Clear Text" mode={mode} showAlert = {showAlert}/>
           </div>
         } />
-        <Route exact path="about" element={<About/>}/>
+        <Route exact path="about" element={<About about="About Us" mode={mode}/>}/>
       </Routes>
     </BrowserRouter>
     </>
